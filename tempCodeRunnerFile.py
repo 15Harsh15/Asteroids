@@ -1,18 +1,5 @@
-import pygame
-from constants import SCREEN_HEIGHT, SCREEN_WIDTH
-from logger import log_state
-def main():
-    pygame.init()
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.time.Clock()
-    dt = 0
-    while True:
-        log_state()
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                return
-        screen.fill("black")
-        pygame.display.flip()
-        clock.tick(60)
-        dt = clock.tick(60)/1000
-        print(dt)
+def move(self,dt):
+        unit_vector = pygame.Vector2(0, 1)
+        rotated_vector = unit_vector.rotate(self.rotation)
+        rotated_with_speed_vector = rotated_vector * PLAYER_SPEED * dt
+        self.position += rotated_with_speed_vector
