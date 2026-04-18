@@ -39,7 +39,7 @@ class Player(CircleShape) :
             self.rotate(-dt)
         if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
             self.rotate(dt)
-        if keys[pygame.K_SPACE]:
+        if keys[pygame.K_SPACE] or keys[pygame.K_0] or keys[pygame.K_KP0]:
             self.shoot()
     def shoot(self):
         if self.shot_cool_down <= 0:
